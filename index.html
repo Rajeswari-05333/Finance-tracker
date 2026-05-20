@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finance Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>💰 Finance Tracker</h1>
+  <button id="toggleTheme">🌙</button>
+</header>
+
+<div class="container">
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="card">
+      <h3>Budget</h3>
+      ₹<span id="budget">0</span>
+    </div>
+    <div class="card">
+      <h3>Spent</h3>
+      ₹<span id="spent">0</span>
+    </div>
+    <div class="card">
+      <h3>Remaining</h3>
+      ₹<span id="remaining">0</span>
+    </div>
+  </div>
+
+  <!-- Budget -->
+  <div class="budget-box">
+    <input type="number" id="budgetInput" placeholder="Set Monthly Budget">
+    <button onclick="setBudget()">Set Budget</button>
+  </div>
+
+  <!-- Form -->
+  <div class="form">
+    <input type="text" id="title" placeholder="Title">
+    <input type="number" id="amount" placeholder="Amount">
+    <select id="category">
+      <option>Food</option>
+      <option>Travel</option>
+      <option>Shopping</option>
+      <option>Bills</option>
+    </select>
+    <input type="date" id="date">
+    <button onclick="addExpense()">Add</button>
+  </div>
+
+  <!-- Search -->
+  <input type="text" id="search" placeholder="Search expenses...">
+
+  <!-- List -->
+  <ul id="expenseList"></ul>
+
+  <!-- Chart -->
+  <canvas id="chart"></canvas>
+
+  <!-- Export -->
+  <button class="export" onclick="exportCSV()">Export CSV</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
